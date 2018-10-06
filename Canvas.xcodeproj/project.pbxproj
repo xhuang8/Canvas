@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB703392168892A00587C1D /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB703382168892A00587C1D /* CanvasViewController.swift */; };
 		0BEC52D6216757AA00424F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEC52D5216757AA00424F24 /* AppDelegate.swift */; };
 		0BEC52D8216757AA00424F24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEC52D7216757AA00424F24 /* ViewController.swift */; };
 		0BEC52DB216757AA00424F24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEC52D9216757AA00424F24 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB703382168892A00587C1D /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		0BEC52D2216757AA00424F24 /* Canvas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canvas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BEC52D5216757AA00424F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BEC52D7216757AA00424F24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB703372168890500587C1D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0BB703382168892A00587C1D /* CanvasViewController.swift */,
+				0BEC52D7216757AA00424F24 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		0BEC52C9216757AA00424F24 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +108,8 @@
 		0BEC52D4216757AA00424F24 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				0BB703372168890500587C1D /* ViewController */,
 				0BEC52D5216757AA00424F24 /* AppDelegate.swift */,
-				0BEC52D7216757AA00424F24 /* ViewController.swift */,
 				0BEC52D9216757AA00424F24 /* Main.storyboard */,
 				0BEC52DC216757AB00424F24 /* Assets.xcassets */,
 				0BEC52DE216757AB00424F24 /* LaunchScreen.storyboard */,
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BEC52D8216757AA00424F24 /* ViewController.swift in Sources */,
+				0BB703392168892A00587C1D /* CanvasViewController.swift in Sources */,
 				0BEC52D6216757AA00424F24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
