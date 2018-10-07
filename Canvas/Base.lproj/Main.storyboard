@@ -68,6 +68,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="RCH-80-0ne" firstAttribute="top" secondItem="0y4-wV-u46" secondAttribute="top" id="3ZQ-wP-R36"/>
                                     <constraint firstItem="0y4-wV-u46" firstAttribute="top" secondItem="xeQ-eu-NLG" secondAttribute="top" id="5JF-Dm-CsF"/>
@@ -87,6 +88,9 @@
                                     <constraint firstItem="0y4-wV-u46" firstAttribute="centerX" secondItem="5Fo-1e-7EM" secondAttribute="centerX" id="xl6-KZ-Y7O"/>
                                     <constraint firstItem="0y4-wV-u46" firstAttribute="leading" secondItem="xeQ-eu-NLG" secondAttribute="trailing" constant="39" id="zrB-VC-BNp"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TYf-Vo-fx8" appends="YES" id="jf5-Cb-Oms"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,8 +102,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="trayView" destination="5Fo-1e-7EM" id="V9I-J3-cYd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TYf-Vo-fx8">
+                    <connections>
+                        <action selector="didPanTray:" destination="BYZ-38-t0r" id="39C-sB-5ug"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </scene>
