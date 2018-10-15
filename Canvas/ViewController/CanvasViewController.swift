@@ -27,6 +27,12 @@ class CanvasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        // Here we use the method didPan(sender:), which we defined in the previous step, as the action.
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPanTray(_:)))
+        
+        // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
+        trayView.isUserInteractionEnabled = true
+        trayView.addGestureRecognizer(panGestureRecognizer)
         
         trayDownOffset = 300
         trayUp = trayView.center // The initial position of the tray
@@ -80,7 +86,9 @@ class CanvasViewController: UIViewController {
         
         // Gesture Recognizer
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(facePan(_: )))
-        
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didFacePinch(_: )))
+        let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(didFaceRotate(_:)))
+        let deleteGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didFaceDetele(_:)))
         
         if sender.state == .began{
             print("Gesture began")
@@ -98,7 +106,10 @@ class CanvasViewController: UIViewController {
             
             newlyCreatedFace.isUserInteractionEnabled = true
             newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
+            newlyCreatedFace.addGestureRecognizer(pinchGestureRecognizer)
+            newlyCreatedFace.addGestureRecognizer(rotateGestureRecognizer)
             
+            newlyCreatedFace.addGestureRecognizer(deleteGestureRecognizer)
             
         }
         else if sender.state == .changed{
@@ -149,6 +160,26 @@ class CanvasViewController: UIViewController {
         }
     }
     
+    @objc func didFacePinch(_ sender: UIPinchGestureRecognizer){
+        
+        let scale = sender.scale
+        let imageView = sender.view as! UIImageView
+        imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
+        sender.scale = 1
+        
+    }
     
+    @objc func didFaceRotate(_ sender: UIRotationGestureRecognizer){
+        
+        let rotation = sender.rotation
+        let imageView = sender.view as! UIImageView
+        imageView.transform = imageView.transform.rotated(by: rotation)
+        sender.rotation = 0
+    }
+    
+    @objc func didFaceDetele(_ sender: UITapGestureRecognizer)
+    {
+        newlyCreatedFace.removeFromSuperview()
+    }
 }
 
