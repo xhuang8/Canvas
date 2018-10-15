@@ -13,6 +13,8 @@ class CanvasViewController: UIViewController {
     
     @IBOutlet weak var trayView: UIView!
     
+    @IBOutlet weak var arrow: UIImageView!
+    
     var trayOriginalCenter: CGPoint!
     
     var newlyCreatedFace: UIImageView!
@@ -65,6 +67,7 @@ class CanvasViewController: UIViewController {
                 UIView.animate(withDuration:0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options:[] ,
                                animations: { () -> Void in
                                 self.trayView.center = self.trayDown
+                                self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
                 }, completion: nil)
             }
             else
@@ -72,6 +75,7 @@ class CanvasViewController: UIViewController {
                 UIView.animate(withDuration:0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options:[] ,
                                animations: { () -> Void in
                                 self.trayView.center = self.trayUp
+                                 self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat(2*M_PI))
                 }, completion: nil)
             }
            print("Gesture ended")
